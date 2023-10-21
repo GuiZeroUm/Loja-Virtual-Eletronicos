@@ -26,7 +26,7 @@ return (
           </SheetHeader>
 
           <div className="mt-2 flex flex-col gap-3">
-          <Button variant="outline" className="w-full justify-start gap-2">
+            <Button variant="outline" className="w-full justify-start gap-2">
             <LogInIcon size={16} />
             Fazer Login
             </Button>
