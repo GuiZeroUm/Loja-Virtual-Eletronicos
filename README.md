@@ -20,7 +20,7 @@ As seguintes ferramentas estão sendo usadas:
 - [shadcn/ui](https://ui.shadcn.com): Uma biblioteca de componentes de IU reutilizáveis e estilizáveis.
 - [Tailwind CSS](https://tailwindcss.com): Um framework CSS que oferece várias classes para utilização já pré-estilizadas.
 - [API do Stripe](): Uma API de pagamento popular para processar pagamentos online de forma segura.
-- [Vscode](https://visualstudio.microsoft.com/pt-br/#vs-section)
+- [Vscode](https://visualstudio.microsoft.com/pt-br/#vs-section): Editor de códigos mais utilizado no momento.
 
 ------
 
