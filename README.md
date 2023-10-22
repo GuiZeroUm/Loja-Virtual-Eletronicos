@@ -6,7 +6,7 @@
     :construction:  Projeto em andamento  :construction:
 </h4>
 
-## 🔓 1° Fase: Estudando desenvolvimento de jogos 2D pelo canal [Crie Seus Jogos](https://www.youtube.com/@CrieSeusJogos), estudando a teoria do desenvolvimento de jogos pelo canal [Desenvolvedor Unity](https://www.youtube.com/@DesenvolvedorUnity), e assistindo aulas do curso [Unity do zero ao profissional](https://cursos.dankicode.com/unity-zero-ao-profissional)
+## 🔓 Este é o repositório oficial do e-commerce desenvolvido durante a Full Stack Week, um evento com 4 lives de muito conteúdo. O principal objetivo é criar um projeto altamente relevante, utilizando as tecnologias mais modernas e demandadas pelo mercado, a fim de adicionar autoridade ao currículo de desenvolvedor.
 
 ### 🛠 Tecnologias
 
