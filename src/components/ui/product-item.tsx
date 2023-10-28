@@ -16,7 +16,7 @@ const ProductItem = ({product}: ProductItemProps) => {
                 <Image src={product.imageUrls[0]}
                 height={0}
                 width={0}
-                sizes="100vw"
+                sizes="500vw"
                 className="h-auto w-auto max-w-[80%] max-h-[70%]"
                 style={{objectFit: "contain",}}
                 alt={product.name}
