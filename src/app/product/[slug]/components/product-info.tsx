@@ -1,79 +1,104 @@
-"use client"
+"use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ProductWithTotalPrice } from "@/helpers/products";
-import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
-import { useState } from "react";
+import DiscountBadge from "@/components/ui/discount-badge";
+import { ProductWithTotalPrice } from "@/helpers/product";
+import { CartContext } from "@/providers/cart";
+import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
+import { useContext, useState } from "react";
 
 interface ProductInfoProps {
-    product: Pick<
-    ProductWithTotalPrice,
-    "basePrice"
-    | "description"
-    | "discountPercentage"
-    | "totalPrice"
-    | "name"
-    >
+  product: ProductWithTotalPrice;
 }
 
-const ProductInfo = ({product: {name, basePrice, totalPrice, description, discountPercentage}}: ProductInfoProps) => {
-    const [quantity, setQuantity] = useState(1);
+const ProductInfo = ({ product }: ProductInfoProps) => {
+  const [quantity, setQuantity] = useState(1);
 
-    const handleDecreseQuantityClick = () => {
-        setQuantity(prev => prev === 1 ? prev : prev -1)
-    }
+  const { addProductToCart } = useContext(CartContext);
 
-    const handleIncreaseQuantityClick = () => {
-        setQuantity((prev) => prev + 1)
-    }
-    return (
-        <div className="flex flex-col px-5">
-            <h2 className="text-lg">{name}</h2>
+  const handleDecreaseQuantityClick = () => {
+    setQuantity((prev) => (prev === 1 ? prev : prev - 1));
+  };
 
-            <div className="flex items-center gap-1">
-            <h1 className="text-xl font-bold gap-2">R$ {totalPrice.toFixed(2)}</h1>
-            {discountPercentage > 0 && (
-                <Badge className="px-2 py-[2px]">
-                    <ArrowDownIcon size={14}/> {discountPercentage}%
-                </Badge>
-            )}
-            </div>
+  const handleIncreaseQuantityClick = () => {
+    setQuantity((prev) => prev + 1);
+  };
 
-            {discountPercentage > 0 && (<p className="opacity-75 text-sm line-through">R$ {Number(basePrice).toFixed(2)}</p>)}
+  const handleAddToCartClick = () => {
+    addProductToCart({ ...product, quantity });
+  };
 
-            <div className="flex items-center gap-2 mt-4">
-                <Button size="icon" variant='outline' onClick={handleDecreseQuantityClick}>
-                    <ArrowLeftIcon size={16}/>
-                </Button>
+  return (
+    <div className="flex flex-col px-5 lg:w-[40%] lg:rounded-lg lg:bg-accent lg:p-10">
+      <h2 className="text-lg lg:text-2xl">{product.name}</h2>
 
-                <span>{quantity}</span>
+      <div className="flex items-center gap-2">
+        <h1 className="text-xl font-bold lg:text-3xl">
+          R$ {product.totalPrice.toFixed(2)}
+        </h1>
+        {product.discountPercentage > 0 && (
+          <DiscountBadge className="lg:text-base">
+            {product.discountPercentage}
+          </DiscountBadge>
+        )}
+      </div>
 
-                <Button size="icon" variant='outline' onClick={handleIncreaseQuantityClick}>
-                    <ArrowRightIcon size={16}/>
-                </Button>
-            </div>
+      {product.discountPercentage > 0 && (
+        <p className="text-sm line-through opacity-75 lg:text-base">
+          R$ {Number(product.basePrice).toFixed(2)}
+        </p>
+      )}
 
-            <div className="flex flex-col gap-3 mt-8">
-                <h3 className="font-bold">Descrição</h3>
-                <p className="opacity-60 text-sm text-justify">{description}</p>
-            </div>
-            
-            <Button className="mt-8 uppercase font-bold">Adicionar ao carrinho</Button>
+      <div className="mt-4 flex items-center gap-2">
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={handleDecreaseQuantityClick}
+        >
+          <ArrowLeftIcon size={16} />
+        </Button>
 
-            <div className="bg-accent flex items-center px-5 py-2 justify-between mt-5 rounded-lg">
-                <div className="flex items-center gap-2">
-                    <TruckIcon/>
-                    <div className="flex flex-col">
-                        <p className="text-xs">Entrega via <span className="font-bold">GSPacket®</span></p>
-                        <p className="text-[#B162FF] text-xs">Envio para <span className="font-bold">todo Brasil</span></p>
-                    </div>
-                </div>
+        <span>{quantity}</span>
 
-                <p className="font-bold text-xs">Frete Grátis</p>
-            </div>
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={handleIncreaseQuantityClick}
+        >
+          <ArrowRightIcon size={16} />
+        </Button>
+      </div>
+
+      <div className="mt-8 flex flex-col gap-3">
+        <h3 className="font-bold">Descrição</h3>
+        <p className="text-justify text-sm opacity-60">{product.description}</p>
+      </div>
+
+      <Button
+        className="mt-8 font-bold uppercase"
+        onClick={handleAddToCartClick}
+      >
+        Adicionar ao carrinho
+      </Button>
+
+      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 lg:bg-[#2A2A2A]">
+        <div className="flex items-center gap-2">
+          <TruckIcon />
+
+          <div className="flex flex-col">
+            <p className="text-xs">
+              Entrega via <span className="font-bold">FSPacket®</span>
+            </p>
+            <p className="text-xs text-[#8162FF]">
+              Envio para <span className="font-bold">todo Brasil</span>
+            </p>
+          </div>
         </div>
-    );
-}
- 
+
+        <p className="text-xs font-bold">Frete grátis</p>
+      </div>
+    </div>
+  );
+};
+
 export default ProductInfo;
