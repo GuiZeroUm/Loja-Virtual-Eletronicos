@@ -3,7 +3,8 @@
 <h3 align="center"> 🥇 Estudando Next.js, Typescript e Tailwind CSS </h3>
            
 <h4 align="center"> 
-    :construction:  Projeto em andamento  :construction:
+    ✨ Projeto Finalizado ✨
+
 </h4>
 
 ## 🔓 Este é o repositório oficial do e-commerce desenvolvido durante a Full Stack Week, um evento com 4 lives de muito conteúdo. O principal objetivo é criar um projeto altamente relevante, utilizando as tecnologias mais modernas e demandadas pelo mercado, a fim de adicionar autoridade ao currículo de desenvolvedor.
@@ -27,12 +28,16 @@ As seguintes ferramentas estão sendo usadas:
 ### ✅ Funcionalidades
 
 - [x] **Login com o Google**: Permitimos que os usuários façam login usando suas contas do Google para uma experiência de autenticação simplificada.
-- [ ] **Navegação por Categorias**: Os usuários podem explorar produtos por categorias, facilitando a busca e a compra.
-- [ ] **Descontos em Produtos**: Alguns produtos podem ter descontos especiais, permitindo aos usuários economizar em suas compras.
-- [ ] **Gerenciamento do Carrinho de Compras**: Os usuários podem adicionar produtos ao seu carrinho de compras, remover produtos e também modificar a quantidade de um produto no carrinho de compras conforme necessário.
+- [x] **Navegação por Categorias**: Os usuários podem explorar produtos por categorias, facilitando a busca e a compra.
+- [x] **Descontos em Produtos**: Alguns produtos podem ter descontos especiais, permitindo aos usuários economizar em suas compras.
+- [x] **Gerenciamento do Carrinho de Compras**: Os usuários podem adicionar produtos ao seu carrinho de compras, remover produtos e também modificar a quantidade de um produto no carrinho de compras conforme necessário.
 - [ ] **Pagamento do Pedido com a API do Stripe**: Oferecemos uma experiência segura de pagamento online com a integração da API do Stripe, incluindo o uso de webhooks para processar eventos relacionados ao pagamento. Os usuários podem concluir seus pedidos com facilidade e segurança.
 
 ------
+
+### Acesse o site no link a baixo:
+
+https://loja-virtual-eletronicos.vercel.app
 
 ### 🤝 Caso queira ver o projeto
 - Caso você queira ver o andamento do projeto até o presente momento, basta acessar o seguinte link:
