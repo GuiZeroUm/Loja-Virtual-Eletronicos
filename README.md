@@ -35,10 +35,6 @@ As seguintes ferramentas estão sendo usadas:
 
 ------
 
-### Acesse o site no link a baixo:
-
-https://loja-virtual-eletronicos.vercel.app
-
 ### 🤝 Caso queira ver o projeto
 - Caso você queira ver o andamento do projeto até o presente momento, basta acessar o seguinte link:
 - https://loja-virtual-eletronicos.vercel.app
